@@ -1,10 +1,10 @@
 <?php 
 /*
 Plugin Name: Social Analytics
-Plugin URI: http://www.springest.co.uk
+Plugin URI: http://www.springest.co.uk/social-analytics/
 Description: Plugin for Monitoring Which Social Networks Your Visitors are Logged Into With Google Analytics.
 Author: Martijn Scheybeler
-Version: 0.1
+Version: 0.2
 Author URI: http://www.linkedin.com/in/martijnscheijbeler
 License: GPLv2 or later
 */
@@ -49,7 +49,7 @@ function social_analytics_footer() {
 	<div id='fb-root'></div>
 	<script>
 		window.fbAsyncInit = function() {
-			FB.init({ appId:'". $appID ."', status:true,  cookie:true, xfbml:true});
+			FB.init({ appId:'". esc_attr($appID) ."', status:true,  cookie:true, xfbml:true});
 			FB.getLoginStatus(function(response){
 				if (response.status != 'unknown') {
 					record_login_status(4, 'Facebook', true);
