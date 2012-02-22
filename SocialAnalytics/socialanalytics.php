@@ -79,5 +79,5 @@ function oscimp_admin_actions() {
 
 add_action('admin_menu', 'oscimp_admin_actions');
 add_action('wp_footer', 'social_analytics_footer');
-add_action('wp_head', 'social_analytics_head');
+add_action('wp_head', 'social_analytics_head', 90);
 ?>
