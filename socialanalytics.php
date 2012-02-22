@@ -44,29 +44,29 @@ function social_analytics_head() {
 
 function social_analytics_footer() {
 	$appID = get_option('app_id');
-	echo "<img style='display:none;' onload='record_login_status(1, 'Google', true)' onerror='record_login_status(1, 'Google', false)' src='https://accounts.google.com/CheckCookie?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png' />
-	<img style='display:none;' onload='record_login_status(2, 'GooglePlus', true)' onerror='record_login_status(2, 'GooglePlus', false)' src='https://plus.google.com/up/?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png&type=st&gpsrc=ogpy0' />
-	<img style='display:none;' src='https://twitter.com/login?redirect_after_login=%2Fimages%2Fspinner.gif' onload='record_login_status(3, 'Twitter', true)' onerror='record_login_status(3, 'Twitter', false)' />
-	<div id='fb-root'></div>
+	echo '<img style="display:none;" onload="record_login_status(1, "Google", true)" onerror="record_login_status(1, "Google", false)" src="https://accounts.google.com/CheckCookie?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png" />
+	<img style="display:none;" onload="record_login_status(2, "GooglePlus", true)" onerror="record_login_status(2, "GooglePlus", false)" src="https://plus.google.com/up/?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png&type=st&gpsrc=ogpy0" />
+	<img style="display:none;" src="https://twitter.com/login?redirect_after_login=%2Fimages%2Fspinner.gif" onload="record_login_status(3, "Twitter", true)" onerror="record_login_status(3, "Twitter", false)" />
+	<div id="fb-root"></div>
 	<script>
 		window.fbAsyncInit = function() {
-			FB.init({ appId:'". esc_attr($appID) ."', status:true,  cookie:true, xfbml:true});
+			FB.init({ appId:"". esc_attr($appID) ."", status:true,  cookie:true, xfbml:true});
 			FB.getLoginStatus(function(response){
-				if (response.status != 'unknown') {
-					record_login_status(4, 'Facebook', true);
+				if (response.status != "unknown") {
+					record_login_status(4, "Facebook", true);
 				}
 				else {
-					record_login_status(4, 'Facebook', false);
+					record_login_status(4, "Facebook", false);
 				}
 			});
 		};
 		(function(d){
-			var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-			js = d.createElement('script'); js.id = id; js.async = true;
-			js.src = '//connect.facebook.net/en_US/all.js';
-			d.getElementsByTagName('head')[0].appendChild(js);
+			var js, id = "facebook-jssdk"; if (d.getElementById(id)) {return;}
+			js = d.createElement("script"); js.id = id; js.async = true;
+			js.src = "//connect.facebook.net/en_US/all.js";
+			d.getElementsByTagName("head")[0].appendChild(js);
 		}(document));
-	</script>";
+	</script>';
 }
 
 //*************** Admin function ***************
