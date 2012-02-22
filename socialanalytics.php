@@ -27,7 +27,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 # Load text domain
 load_plugin_textdomain('social_analytics', false, dirname(plugin_basename(__FILE__)) . '/languages' );
-$accesslevel	= 'manage_options';
 
 function social_analytics_head() {
 	echo "<script type='text/javascript'>
@@ -75,7 +74,7 @@ function socialanalytics_admin() {
 }
 
 function oscimp_admin_actions() {
-    add_options_page('Social Analytics', 'Social Analytics', $accesslevel, 'Social-Analytics', 'socialanalytics_admin');
+    add_options_page('Social Analytics', 'Social Analytics', 1, 'Social-Analytics', 'socialanalytics_admin');
 }
 
 add_action('admin_menu', 'oscimp_admin_actions');
