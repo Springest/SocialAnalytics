@@ -43,7 +43,7 @@ function social_analytics_head() {
 
 function social_analytics_footer() {
 	$appID = get_option('app_id');
-	echo '<img style="display:none;" onload="record_login_status(1, \"Google\", true)" onerror="record_login_status(1, "Google", false)" src="https://accounts.google.com/CheckCookie?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png" />
+	echo '<img style="display:none;" onload="record_login_status(1, "Google", true)" onerror="record_login_status(1, "Google", false)" src="https://accounts.google.com/CheckCookie?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png" />
 	<img style="display:none;" onload="record_login_status(2, "GooglePlus", true)" onerror="record_login_status(2, "GooglePlus", false)" src="https://plus.google.com/up/?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png&type=st&gpsrc=ogpy0" />
 	<img style="display:none;" src="https://twitter.com/login?redirect_after_login=%2Fimages%2Fspinner.gif" onload="record_login_status(3, "Twitter", true)" onerror="record_login_status(3, "Twitter", false)" />
 	<div id="fb-root"></div>
