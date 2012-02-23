@@ -29,16 +29,31 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 load_plugin_textdomain('social_analytics', false, dirname(plugin_basename(__FILE__)) . '/languages' );
 
 function social_analytics_head() {
+	$tracking_method = get_option('tracking_method');
+	if ($tracking_method == "cv") {
 	echo "<script type='text/javascript'>
 			function record_login_status(slot, network, status) {
 				if (status) {
-					_gaq.push(['_setCustomVar', slot, network + '_State', 'LoggedIn', 1]); 
+					_gaq.push(['_setCustomVar', slot, network + '_State', 'LoggedIn', 1]);
 				}
 				else {
 					_gaq.push(['_setCustomVar', slot, network + '_State', 'NotLoggedIn', 1]);
 				}
 			}
 	</script>";
+	}
+	if ($tracking_method == "ev") {
+	echo "<script type='text/javascript'>
+			function record_login_status(slot, network, status) {
+				if (status) {
+					_gaq.push(['_trackEvent', 'Social Analytics', network + '_State', 'LoggedIn']);
+				}
+				else {
+					_gaq.push(['_trackEvent', 'Social Analytics', network + '_State', 'NotLoggedIn']);
+				}
+			}
+	</script>";
+	}
 }
 
 function social_analytics_footer() {
@@ -68,7 +83,7 @@ function social_analytics_footer() {
 	</script>';
 }
 
-//*************** Admin function ***************
+//*** Admin function ***
 function socialanalytics_admin() {
 	include('socialanalytics_admin.php');
 }
