@@ -29,60 +29,84 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 load_plugin_textdomain('social_analytics', false, dirname(plugin_basename(__FILE__)) . '/languages' );
 
 function social_analytics_head() {
+	$social_network_google = get_option('social_network_google');
+	$social_network_google_plus = get_option('social_network_google_plus');
+	$social_network_tw = get_option('social_network_tw');
+	$social_network_fb = get_option('social_network_fb');
 	$tracking_method = get_option('tracking_method');
-	if ($tracking_method == "cv") {
-	echo "<script type='text/javascript'>
-			function record_login_status(slot, network, status) {
-				if (status) {
-					_gaq.push(['_setCustomVar', slot, network + '_State', 'LoggedIn', 1]);
-				}
-				else {
-					_gaq.push(['_setCustomVar', slot, network + '_State', 'NotLoggedIn', 1]);
-				}
-			}
-	</script>";
+	if ($social_network_fb != "fb" && $social_network_tw != "tw" && $social_network_google_plus != "google_plus" && $social_network_google != "google") {
+		echo "";
 	}
-	if ($tracking_method == "ev") {
-	echo "<script type='text/javascript'>
-			function record_login_status(slot, network, status) {
-				if (status) {
-					_gaq.push(['_trackEvent', 'Social Analytics', network + '_State', 'LoggedIn']);
+	else {
+		if ($tracking_method == "cv") {
+		echo "<script type='text/javascript'>
+				function record_login_status(slot, network, status) {
+					if (status) {
+						_gaq.push(['_setCustomVar', slot, network + '_State', 'LoggedIn', 1]);
+					}
+					else {
+						_gaq.push(['_setCustomVar', slot, network + '_State', 'NotLoggedIn', 1]);
+					}
 				}
-				else {
-					_gaq.push(['_trackEvent', 'Social Analytics', network + '_State', 'NotLoggedIn']);
+		</script>";
+		}
+		if ($tracking_method == "ev") {
+		echo "<script type='text/javascript'>
+				function record_login_status(slot, network, status) {
+					if (status) {
+						_gaq.push(['_trackEvent', 'Social Analytics', network + '_State', 'LoggedIn']);
+					}
+					else {
+						_gaq.push(['_trackEvent', 'Social Analytics', network + '_State', 'NotLoggedIn']);
+					}
 				}
-			}
-	</script>";
+		</script>";
+		}
 	}
 }
 
 function social_analytics_footer() {
 	$appID = get_option('app_id');
-	echo '<img style="display:none;" onload="record_login_status(1, \'Google\', true)" onerror="record_login_status(1, \'Google\', false)" src="https://accounts.google.com/CheckCookie?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png" />
-	<img style="display:none;" onload="record_login_status(2, \'GooglePlus\', true)" onerror="record_login_status(2, \'GooglePlus\', false)" src="https://plus.google.com/up/?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png&type=st&gpsrc=ogpy0" />
-	<img style="display:none;" src="https://twitter.com/login?redirect_after_login=%2Fimages%2Fspinner.gif" onload="record_login_status(3, \'Twitter\', true)" onerror="record_login_status(3, \'Twitter\', false)" />
-	<div id="fb-root"></div>
-	<script>
-		window.fbAsyncInit = function() {
-			FB.init({ appId:"'. esc_attr($appID) .'", status:true,  cookie:true, xfbml:true});
-			FB.getLoginStatus(function(response){
-				if (response.status != "unknown") {
-					record_login_status(4, "Facebook", true);
-				}
-				else {
-					record_login_status(4, "Facebook", false);
-				}
-			});
-		};
-		(function(d){
-			var js, id = "facebook-jssdk"; if (d.getElementById(id)) {return;}
-			js = d.createElement("script"); js.id = id; js.async = true;
-			js.src = "//connect.facebook.net/en_US/all.js";
-			d.getElementsByTagName("head")[0].appendChild(js);
-		}(document));
-	</script>';
+	$social_network_google = get_option('social_network_google');
+	$social_network_google_plus = get_option('social_network_google_plus');
+	$social_network_tw = get_option('social_network_tw');
+	$social_network_fb = get_option('social_network_fb');
+	
+	if ($social_network_google == "google") {
+		echo '<img style="display:none;" onload="record_login_status(1, \'Google\', true)" onerror="record_login_status(1, \'Google\', false)" src="https://accounts.google.com/CheckCookie?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png" />';
+	}
+	
+	if ($social_network_google == "google_plus") {
+		echo '<img style="display:none;" onload="record_login_status(2, \'GooglePlus\', true)" onerror="record_login_status(2, \'GooglePlus\', false)" src="https://plus.google.com/up/?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png&type=st&gpsrc=ogpy0" />';
+	}
+	
+	if ($social_network_tw == "tw") {
+		echo '<img style="display:none;" src="https://twitter.com/login?redirect_after_login=%2Fimages%2Fspinner.gif" onload="record_login_status(3, \'Twitter\', true)" onerror="record_login_status(3, \'Twitter\', false)" />';
+	}
+	
+	if ($social_network_fb == "fb") {
+		echo '<div id="fb-root"></div>
+			<script>
+				window.fbAsyncInit = function() {
+					FB.init({ appId:"'. esc_attr($appID) .'", status:true,  cookie:true, xfbml:true});
+					FB.getLoginStatus(function(response){
+						if (response.status != "unknown") {
+							record_login_status(4, "Facebook", true);
+						}
+						else {
+							record_login_status(4, "Facebook", false);
+						}
+					});
+				};
+				(function(d){
+					var js, id = "facebook-jssdk"; if (d.getElementById(id)) {return;}
+					js = d.createElement("script"); js.id = id; js.async = true;
+					js.src = "//connect.facebook.net/en_US/all.js";
+					d.getElementsByTagName("head")[0].appendChild(js);
+				}(document));
+			</script>';
+	}
 }
-
 //*** Admin function ***
 function socialanalytics_admin() {
 	include('socialanalytics_admin.php');
