@@ -113,7 +113,7 @@ function socialanalytics_admin() {
 }
 
 function oscimp_admin_actions() {
-    add_options_page('Social Analytics', 'Social Analytics', 1, 'Social-Analytics', 'socialanalytics_admin');
+    add_options_page('Social Analytics', 'Social Analytics', "manage_options", 'Social-Analytics', 'socialanalytics_admin');
 }
 
 add_action('admin_menu', 'oscimp_admin_actions');
