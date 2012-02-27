@@ -75,7 +75,7 @@ function social_analytics_footer() {
 	$social_network_digg = get_option('social_network_digg');
 	
 	if ($social_network_digg == "digg") {
-		echo '<script onload="record_login_status(5, \'Digg\', true)" onerror="record_login_status(1, \'Digg\', false)" src="http://www.digg.com/settings"></script>';
+		echo '<script onload="record_login_status(5, \'Digg\', true)" onerror="record_login_status(5, \'Digg\', false)" src="http://www.digg.com/settings"></script>';
 	}
 	if ($social_network_google == "google") {
 		echo '<img style="display:none;" onload="record_login_status(1, \'Google\', true)" onerror="record_login_status(1, \'Google\', false)" src="https://accounts.google.com/CheckCookie?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png" />';
