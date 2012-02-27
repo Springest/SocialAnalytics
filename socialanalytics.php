@@ -33,8 +33,9 @@ function social_analytics_head() {
 	$social_network_google_plus = get_option('social_network_google_plus');
 	$social_network_tw = get_option('social_network_tw');
 	$social_network_fb = get_option('social_network_fb');
+	$social_network_digg = get_option('social_network_digg');
 	$tracking_method = get_option('tracking_method');
-	if ($social_network_fb != "fb" && $social_network_tw != "tw" && $social_network_google_plus != "google_plus" && $social_network_google != "google") {
+	if ($social_network_fb != "fb" && $social_network_tw != "tw" && $social_network_google_plus != "google_plus" && $social_network_google != "google" && $social_network_digg != "digg") {
 		echo "";
 	}
 	else {
@@ -71,19 +72,20 @@ function social_analytics_footer() {
 	$social_network_google_plus = get_option('social_network_google_plus');
 	$social_network_tw = get_option('social_network_tw');
 	$social_network_fb = get_option('social_network_fb');
+	$social_network_digg = get_option('social_network_digg');
 	
+	if ($social_network_digg == "digg") {
+		echo '<script onload="record_login_status(1, \'Digg\', true)" onerror="record_login_status(1, \'Digg\', false)" src="http://www.digg.com/settings"></script>';
+	}
 	if ($social_network_google == "google") {
 		echo '<img style="display:none;" onload="record_login_status(1, \'Google\', true)" onerror="record_login_status(1, \'Google\', false)" src="https://accounts.google.com/CheckCookie?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png" />';
 	}
-	
 	if ($social_network_google == "google_plus") {
 		echo '<img style="display:none;" onload="record_login_status(2, \'GooglePlus\', true)" onerror="record_login_status(2, \'GooglePlus\', false)" src="https://plus.google.com/up/?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png&type=st&gpsrc=ogpy0" />';
 	}
-	
 	if ($social_network_tw == "tw") {
 		echo '<img style="display:none;" src="https://twitter.com/login?redirect_after_login=%2Fimages%2Fspinner.gif" onload="record_login_status(3, \'Twitter\', true)" onerror="record_login_status(3, \'Twitter\', false)" />';
 	}
-	
 	if ($social_network_fb == "fb") {
 		echo '<div id="fb-root"></div>
 			<script>
