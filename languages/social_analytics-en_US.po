@@ -1,41 +1,95 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Social Analytics\n"
-"POT-Creation-Date: 2012-02-20 22:49+0100\n"
-"PO-Revision-Date: 2012-02-20 22:49+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-24 13:20+0100\n"
+"PO-Revision-Date: 2012-04-24 13:20+0100\n"
+"Last-Translator: Martijn Scheijbeler <martijn.scheijbeler@springest.com>\n"
 "Language-Team: Martijn Scheybeler <martijn.scheijbeler@springest.co.uk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SearchPath-0: /Users/martijnscheybeler/Sites/springest/SocialAnalytics\n"
 
-#: wp-content/plugins/oscommerce_importer/oscommerce_import_admin.php:7
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:19
 msgid "Changes saved."
 msgstr "Changes saved."
 
-#: wp-content/plugins/oscommerce_importer/oscommerce_import_admin.php:16
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:34
 msgid "Social Analytics"
 msgstr "Social Analytics"
 
-#: wp-content/plugins/oscommerce_importer/oscommerce_import_admin.php:17
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:35
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:74
 msgid "Facebook"
 msgstr "Facebook"
 
-#: wp-content/plugins/oscommerce_importer/oscommerce_import_admin.php:18
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:36
 msgid "Grab the App ID from the Facebook App you just created."
 msgstr "Grab the App ID from the Facebook App you just created."
 
-#: wp-content/plugins/oscommerce_importer/oscommerce_import_admin.php:25
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:43
 msgid "Facebook App ID:"
 msgstr "Facebook App ID:"
 
-#: wp-content/plugins/oscommerce_importer/oscommerce_import_admin.php:25
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:46
 msgid "Example: 722620961"
 msgstr "Example: 722620961"
 
-#: wp-content/plugins/oscommerce_importer/oscommerce_import_admin.php:34
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:51
+#, fuzzy
+msgid "Google Analytics"
+msgstr "Social Analytics"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:52
+msgid "Choose the tracking method for the Social Analytics Plugin."
+msgstr "Choose the tracking method for the Social Analytics Plugin."
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:57
+msgid "Tracking Method:"
+msgstr "Tracking Method:"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:60
+msgid "Custom Variables"
+msgstr "Custom Variables"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:60
+msgid "Event Tracking"
+msgstr "Event Tracking"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:65
+msgid "Social Networks"
+msgstr "Social Networks"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:66
+msgid "Which Social Networks do you want to track in Google Analytics?"
+msgstr "Which Social Networks do you want to track in Google Analytics?"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:71
+msgid "Social Networks:"
+msgstr "Social Networks:"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:75
+msgid "Twitter"
+msgstr "Twitter"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:76
+msgid "Google"
+msgstr "Google"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:77
+msgid "Google Plus"
+msgstr "Google Plus"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:78
+msgid "Digg"
+msgstr "Digg"
+
+#: /Users/martijnscheybeler/Sites/springest/SocialAnalytics/socialanalytics_admin.php:84
 msgid "Save Changes"
 msgstr "Save Changes"
+
