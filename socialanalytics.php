@@ -4,7 +4,7 @@ Plugin Name: Social Analytics
 Plugin URI: http://www.springest.co.uk/social-analytics/
 Description: Plugin for Monitoring Which Social Networks Your Visitors are Logged Into With Google Analytics.
 Author: Martijn Scheybeler
-Version: 0.2
+Version: 0.25
 Author URI: http://www.linkedin.com/in/martijnscheijbeler
 License: GPLv2 or later
 */
